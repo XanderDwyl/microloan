@@ -1,0 +1,13 @@
+doc/
+log/
+tmp/
+db/schema.rb
+
+rerun.txt
+*.log
+.byebug_history
+.sass-cache
+dump.rdb
+public/assets/
+brew
+pubkey.txt
