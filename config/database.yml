@@ -26,8 +26,4 @@ test:
   database: microloan_test
 
 production:
-  <<: *default
-  database: microloan_prod
-  username: root
-  password:
-
+  url: <%= ENV["CLEARDB_DATABASE_URL"] %>
