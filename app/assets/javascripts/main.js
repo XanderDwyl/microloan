@@ -42,14 +42,6 @@ $(function() {
     }, function() {
         $(this).removeClass("uk-animation-scale")
     });
-    $(".sendEmail").click(function(e) {
-        var t = "antonellatezza";
-        var n = "gmail.com";
-        var r = t + "@" + n;
-        var i = "Contact from your website";
-        var s = "Hi Antonella";
-        window.location = "mailto:" + r + "?subject=" + i + "&body=" + s
-    });
     var e = function(e, t) {
         if (t) {
             $(this).addClass("inview");
