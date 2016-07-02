@@ -36,20 +36,68 @@ function retina() {
 $(document).ready(retina);
 
 $(function() {
-    $(".slider").slick({autoplay: true});
-    $("img.social-icon").hover(function() {
-        $(this).addClass("uk-animation-scale")
-    }, function() {
-        $(this).removeClass("uk-animation-scale")
-    });
-    var e = function(e, t) {
-        if (t) {
-            $(this).addClass("inview");
-            $("nav li").removeClass("uk-active");
-            $("nav li." + this.id).addClass("uk-active")
-        } else {
-            $(this).removeClass("inview")
+  $(".slider").slick({autoplay: true});
+  $("img.social-icon").hover(function() {
+      $(this).addClass("uk-animation-scale")
+  }, function() {
+      $(this).removeClass("uk-animation-scale")
+  });
+  var e = function(e, t) {
+      if (t) {
+          $(this).addClass("inview");
+          $("nav li").removeClass("uk-active");
+          $("nav li." + this.id).addClass("uk-active")
+      } else {
+          $(this).removeClass("inview")
+      }
+  };
+  $("#start, #what, #workon, #reference, #aboutme, #contact").bind("inview", e)
+
+  var iconToShow = false;
+  var fieldToValidate = {
+    mc_username: {
+      icon: iconToShow,
+      validators: {
+        notEmpty: {
+          message: 'The username is required'
         }
-    };
-    $("#start, #what, #workon, #reference, #aboutme, #contact").bind("inview", e)
+      }
+    },
+    mc_email: {
+      icon: iconToShow,
+      validators: {
+        notEmpty: {
+          message: 'The email is required'
+        },
+        emailAddress: {
+          message: 'The input is not a valid email address'
+        }
+      }
+    },
+    mc_password: {
+      icon: iconToShow,
+      validators: {
+        notEmpty: {
+          message: 'The password is required'
+        },
+        stringLength: {
+          min: 8,
+          message: 'The password must have at least 8 characters'
+        }
+      }
+    }
+  };
+
+  $('#registration-form').formValidation({
+    framework: 'uikit',
+    icon: {
+        valid: 'uk-icon-check',
+        invalid: 'uk-icon-times',
+        validating: 'uk-icon-refresh'
+    },
+    fields: fieldToValidate
+  });
 });
+
+
+

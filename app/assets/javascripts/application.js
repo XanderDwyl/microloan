@@ -15,9 +15,12 @@
 //= require jquery_ujs
 //= require 'slick'
 //= require 'retina.min'
-//= require 'main'
 //= require 'uikit/uikit'
 //= require 'uikit/components/grid'
 //= require 'uikit/components/sticky'
+//= require 'uikit/components/form-password'
+//= require 'form-validation.min'
+//= require 'framework-uikit.min'
+//= require 'main'
 //= require_tree .
 

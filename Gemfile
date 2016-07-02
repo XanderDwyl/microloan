@@ -6,6 +6,9 @@ gem 'rails', '4.2.6'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.3.13', '< 0.5'
 
+# Use ActiveModel has_secure_password
+gem 'bcrypt', '~> 3.1.7'
+
 # sprockets stuff
 gem 'sprockets-rails'
 gem 'sass-rails', '~> 5.0'
@@ -17,6 +20,8 @@ gem 'turbolinks'
 
 # URI
 gem 'addressable'
+
+gem 'protected_attributes'
 
 # Use Unicorn as the app server
 gem 'unicorn'
