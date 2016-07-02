@@ -1,10 +1,13 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.6'
+gem 'rails', '~> 5.0.0'
 
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.3.13', '< 0.5'
+
+# Use Unicorn as the app server
+gem 'unicorn'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
@@ -13,24 +16,21 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'sprockets-rails'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.1.0'
+gem 'coffee-rails', '~> 4.2'
 
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
+gem 'turbolinks', '~> 5'
 
 # URI
 gem 'addressable'
 
-gem 'protected_attributes'
-
-# Use Unicorn as the app server
-gem 'unicorn'
-
-#frontend
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  gem 'byebug', platform: :mri
+
   gem 'cucumber-rails', :require => false
   gem 'capybara'
   gem 'poltergeist'
@@ -41,11 +41,13 @@ group :development, :test do
 end
 
 group :development do
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
+  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
+  gem 'web-console'
+  gem 'listen', '~> 3.0.5'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  # For TDD/BDD
+  gem 'spring-watcher-listen', '~> 2.0.0'
+
   gem 'guard'
   gem 'guard-cucumber'
   gem 'ultrahook'
@@ -57,5 +59,5 @@ gem 'jquery-turbolinks'
 gem 'haml-rails'
 gem 'uikit-sass-rails'
 
-# meta_tags
-gem 'meta-tags', :require => 'meta_tags'
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

@@ -7,5 +7,7 @@ task :setup => :setupdb do
 end
 
 task :setupdb do
+  system("rake db:environment:set RAILS_ENV=development")
   system("rake db:drop db:create db:migrate")
 end
+

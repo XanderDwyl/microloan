@@ -3,6 +3,7 @@ class AccountController < ApplicationController
   def index; end
 
   def create
+    puts account_params
     user = User.new(account_params)
     user.save
 
@@ -11,6 +12,7 @@ class AccountController < ApplicationController
 
   private
   def account_params
-    return params.require(:user).permit(:username, :password)
+    return params.permit(:username, :password)
   end
+
 end

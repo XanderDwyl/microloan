@@ -51,11 +51,14 @@
     label {
       color: #D85030;
     }
-    a {
-      & > [class*='uk-icon-'] {
-        position: absolute;
-        bottom: -3px;
-        right: 0;
+    .with-icon {
+      a {
+        top: 6px;
+        & > [class*='uk-icon-'] {
+          position: absolute;
+          top: 8px;
+          right: 0;
+        }
       }
     }
   }

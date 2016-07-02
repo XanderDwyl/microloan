@@ -6,13 +6,13 @@
           %input{:name => "authenticity_token", :type => "hidden", :value => "#{form_authenticity_token}"}
           .uk-form-row
             %label.uk-form-label{:for => "username"} Username
-            .uk-form-controls.no-icon
-              %input#username.uk-width-1-1{placeholder: "username", type: "text", name: "user[username]" }
+            .uk-form-controls
+              %input#username.uk-width-1-1{placeholder: "username", type: "text", name: "username" }
           .uk-form-row
             %label.uk-form-label{:for => "form-s-ip"} Password
-            .uk-form-controls
+            .uk-form-controls.with-icon
               .uk-form-password.uk-width-1-1
-                %input.uk-width-1-1{type: "password", name: "user[password]"}
+                %input.uk-width-1-1{type: "password", name: "password"}
                   %a.uk-form-password-toggle{"data-uk-form-password" => "{lblShow: '<i class=uk-icon-eye></i>', lblHide: '<i class=uk-icon-eye-slash></i>'}", :href => ""}
                     %i.uk-icon-eye
           .uk-form-row

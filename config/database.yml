@@ -24,6 +24,3 @@ development:
 test:
   <<: *default
   database: microloan_test
-
-production:
-  url: <%= ENV["CLEARDB_DATABASE_URL"] %>

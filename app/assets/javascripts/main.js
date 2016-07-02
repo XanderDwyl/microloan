@@ -52,10 +52,9 @@ $(function() {
       }
   };
   $("#start, #what, #workon, #reference, #aboutme, #contact").bind("inview", e)
-
   var iconToShow = false;
   var fieldToValidate = {
-    mc_username: {
+    username: {
       icon: iconToShow,
       validators: {
         notEmpty: {
@@ -63,7 +62,7 @@ $(function() {
         }
       }
     },
-    mc_email: {
+    email: {
       icon: iconToShow,
       validators: {
         notEmpty: {
@@ -74,7 +73,7 @@ $(function() {
         }
       }
     },
-    mc_password: {
+    password: {
       icon: iconToShow,
       validators: {
         notEmpty: {
@@ -98,6 +97,7 @@ $(function() {
     fields: fieldToValidate
   });
 });
+
 
 
 
