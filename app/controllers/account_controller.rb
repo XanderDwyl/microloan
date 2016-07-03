@@ -1,4 +1,5 @@
 class AccountController < ApplicationController
+  before_action :required_login, only: :index
 
   def index; end
 
@@ -14,5 +15,4 @@ class AccountController < ApplicationController
   def account_params
     return params.permit(:username, :password)
   end
-
 end

@@ -11,6 +11,8 @@
     = csrf_meta_tags
 
   %body
+    = render 'partials/notification'
+
     .container
       = yield
 
