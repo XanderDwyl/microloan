@@ -3,7 +3,14 @@ class AccountController < ApplicationController
 
   before_action :required_login, only: :index
 
-  def index; end
+  def index
+    @user = session
+  end
+
+  def new
+    notice_msg = "Can create user when login"
+    redirect_to account_index_path, :notice => notice_msg if isLogin
+  end
 
   def create
     user = User.new(account_params)
