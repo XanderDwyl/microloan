@@ -1,14 +1,16 @@
 class AccountController < ApplicationController
+  include AuthHelper
+
   before_action :required_login, only: :index
 
   def index; end
 
   def create
-    puts account_params
     user = User.new(account_params)
-    user.save
-
-    render template: 'account/index', layout: 'application'
+    if user.save
+      set_session_user user
+      render template: 'account/index', layout: 'application'
+    end
   end
 
   private
