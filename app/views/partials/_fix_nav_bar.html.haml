@@ -10,3 +10,9 @@
               %a{"data-uk-smooth-scroll" => "", :href => "#what"} How
             %li.uk-parent.reference.uk-hidden-small
               %a{"data-uk-smooth-scroll" => "", :href => "#reference"} People say
+            - if isLogin
+              %li.uk-parent
+                %a{:href => "/logout"} Logout
+            - else
+              %li.uk-parent
+                %a{:href => "/login"} Login
