@@ -6,5 +6,8 @@ Rails.application.routes.draw do
   get 'logout' => "auth#logout"
   post 'login' => "auth#create"
 
-  resources :account, only: ['index', 'create', 'new']
+  resources :account, only: ['index', 'create']
+  get 'register' => "account#new"
+
+  get '*anything' => 'error#not_found'
 end
