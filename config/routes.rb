@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   resources :account, only: ['index', 'create']
   get 'register' => "account#new"
+  get 'account/new' => redirect('/register')
+
 
   get '*anything' => 'error#not_found'
 end

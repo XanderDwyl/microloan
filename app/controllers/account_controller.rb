@@ -13,9 +13,6 @@ class AccountController < ApplicationController
   end
 
   def create
-  end
-
-  def register
     user = User.new(account_params)
     begin
       if user.save
