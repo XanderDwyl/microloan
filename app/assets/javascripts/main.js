@@ -43,13 +43,14 @@ $(function() {
       $(this).removeClass("uk-animation-scale")
   });
   var e = function(e, t) {
-      if (t) {
-          $(this).addClass("inview");
-          $("nav li").removeClass("uk-active");
-          $("nav li." + this.id).addClass("uk-active")
-      } else {
-          $(this).removeClass("inview")
-      }
+    if (t) {
+        $(this).addClass("inview");
+        $("nav li").removeClass("uk-active");
+        $("nav li." + this.id).addClass("uk-active");
+    } else {
+      console.log('alex')
+        $(this).removeClass("inview");
+    }
   };
   $("#start, #what, #workon, #reference, #aboutme, #contact").bind("inview", e)
   var iconToShow = false;
