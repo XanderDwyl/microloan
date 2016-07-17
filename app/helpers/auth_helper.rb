@@ -15,7 +15,7 @@ module AuthHelper
       notify_msg = "Welcome back, #{user[:username]}"
     end
 
-    redirect_to route_url, :notice => notify_msg
+    redirect_to route_url, flash: { success: notify_msg }
   end
 
   def isLogin

@@ -14,7 +14,7 @@ class AuthController < ApplicationController
     session[:username]= nil
     session[:full_name]= nil
 
-    redirect_to root_path, :notice => "Successfully logout!"
+    redirect_to root_path, flash: { success: 'Successfully logout!' }
   end
 
   private
