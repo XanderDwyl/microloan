@@ -1,2 +1,12 @@
+
+- if flash[:error]
+  %script
+    Toast.error("#{flash[:error]}")
+
+- if flash[:success]
+  %script
+    Toast.success("#{flash[:success]}")
+
 - if flash[:notice]
-  = flash[:notice]
+  %script
+    Toast.warning("#{flash[:notice]}")

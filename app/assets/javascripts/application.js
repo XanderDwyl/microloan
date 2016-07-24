@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require 'toastr'
 //= require turbolinks
 //= require 'slick'
 //= require 'retina.min'
@@ -21,5 +22,6 @@
 //= require 'uikit/components/form-password'
 //= require 'form-validation.min'
 //= require 'framework-uikit.min'
+//= require 'custom_toast'
 //= require 'main'
 //= require_tree .

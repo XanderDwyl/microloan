@@ -10,12 +10,16 @@ class AuthController < ApplicationController
   end
 
   def logout
-    session[:user_id] = nil
-    redirect_to '/login', :notice => "Successfully logout!"
+    session[:user_id]= nil
+    session[:username]= nil
+    session[:full_name]= nil
+
+    redirect_to root_path, flash: { success: 'Successfully logout!' }
   end
 
   private
+
   def account_params
-    return params.permit(:username, :password)
+    params.permit(:username, :password)
   end
 end

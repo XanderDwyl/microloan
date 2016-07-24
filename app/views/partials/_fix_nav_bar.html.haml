@@ -1,4 +1,4 @@
-#navigation.full-width.colour-bg-1.sticky-navigation{"data-uk-scrollspy-nav" => "{closest:'li', smoothscroll:true}", "data-uk-sticky" => "{animation: 'uk-animation-slide-top'}"}
+#navigation
   .uk-container.uk-container-center
     .uk-width-1-1
       %nav.uk-navbar
@@ -10,3 +10,9 @@
               %a{"data-uk-smooth-scroll" => "", :href => "#what"} How
             %li.uk-parent.reference.uk-hidden-small
               %a{"data-uk-smooth-scroll" => "", :href => "#reference"} People say
+            - if isLogin
+              %li.uk-parent
+                %a{:href => "/logout"} Logout
+            - else
+              %li.uk-parent
+                %a{:href => "/login"} Login
