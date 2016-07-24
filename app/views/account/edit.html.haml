@@ -1,0 +1,34 @@
+.tm-section
+  .uk-grid.tm-grid-margin-large.uk-text-center
+    - unless @user.nil?
+      %form#edit-form.uk-form.uk-form-horizontal.uk-container-center.uk-width-medium-1-2{method: "POST", action: "/account"}
+        %input{:name => "authenticity_token", :type => "hidden", :value => "#{form_authenticity_token}"}
+        .uk-form-row
+          %label.uk-form-label Username
+          .uk-form-controls
+            %input#username.uk-width-1-1{placeholder: "username", type: "text", name: "username", value: @user['username'].to_s}
+        .uk-form-row
+          %label.uk-form-label First name
+          .uk-form-controls
+            %input#firstname.uk-width-1-1{placeholder: "firstname", type: "text", name: "firstname", value: retrieve_field(@user.profile, 'firstname')}
+        .uk-form-row
+          %label.uk-form-label Last name
+          .uk-form-controls
+            %input#lastname.uk-width-1-1{placeholder: "lastname", type: "text", name: "lastname", value: retrieve_field(@user.profile, 'lastname')}
+        .uk-form-row
+          %label.uk-form-label Birthdate
+          .uk-form-controls
+            %input#birthdate.uk-width-1-1{placeholder: "birthdate", type: "text", name: "birthdate", value: retrieve_field(@user.profile, 'birthdate')}
+        .uk-form-row
+          %label.uk-form-label Home Address
+          .uk-form-controls
+            %input#home_address.uk-width-1-1{placeholder: "home address", type: "text", name: "home_address", value: retrieve_field(@user.profile, 'address')}
+        .uk-form-row
+          %label.uk-form-label Contact No
+          .uk-form-controls
+            %input#contact_no.uk-width-1-1{placeholder: "Contact No.", type: "text", name: "contact_no", value: retrieve_field(@user.profile, 'contactno')}
+
+
+
+
+

@@ -26,6 +26,12 @@ class AccountController < ApplicationController
     end
   end
 
+	def edit
+		@user = User.find(params[:id])
+	rescue
+		@user = {}
+	end
+
   private
   def account_params
     return params.permit(:username, :password)

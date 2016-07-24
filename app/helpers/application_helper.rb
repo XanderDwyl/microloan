@@ -9,4 +9,9 @@ module ApplicationHelper
     end
     # Todo: add user profiles
   end
+	def retrieve_field lists, field
+		profile_field = '' and return if lists.nil?
+		profile_field = lists[field].to_s
+		profile_field
+	end
 end

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'logout' => "auth#logout"
   post 'login' => "auth#create"
 
-  resources :account, only: ['index', 'create']
+  resources :account, only: ['index', 'create', 'edit']
   get 'register' => "account#new"
   get 'account/new' => redirect('/register')
 
