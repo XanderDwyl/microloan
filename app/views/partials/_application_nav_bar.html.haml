@@ -1,0 +1,18 @@
+#navigation
+  .uk-container.uk-container-center
+    .uk-width-1-1
+      %nav.uk-navbar
+        .uk-navbar-flip
+          %ul.uk-navbar-nav
+            %li
+              %a{:href => ""} Home
+            %li
+              %a{:href => ""} Help
+            %li
+              %a{:href => ""} Users
+            - if isLogin
+              %li.uk-parent
+                %a{:href => "/logout"} Logout
+            - else
+              %li.uk-parent
+                %a{:href => "/login"} Login

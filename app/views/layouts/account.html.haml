@@ -14,16 +14,6 @@
 
   %body
     = render 'partials/notification'
-    = render 'partials/fix_nav_bar'
     .uk-container.uk-container-center
-      %h1.uk-article-title Sample
-      .uk-grid{"data-uk-grid-margin" => ""}
-        .uk-width-medium-1-4.uk-hidden-small
-          %ul
-            %li
-              Sample 1
-            %li
-              Sample 2
-        .uk-width-medium-3-4
-          = yield
+      = yield
 

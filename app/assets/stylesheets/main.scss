@@ -2,13 +2,14 @@
 $bg_color: #f9fbfc;
 $border_color_nav: #a8e4d0;
 $border_color_grid: #ddeae6;
+$link_color: #0c61ab;
+$button_text_color: #ffffff;
 
-html, body {
-  // font: normal 14px / 20px "Scope One", Helvetica, Arial, sans-serif;
+a {
+  color: $link_color;
 }
 
 .uk-article-title {
-  padding-top: 30px;
   border-bottom: 2px solid #ddeae6;
   font-weight: 400;
   font-size: 1.8rem;
@@ -20,6 +21,8 @@ html, body {
 #navigation {
   background: linear-gradient(180deg,#fff 0,hsla(0,0%,100%,0)) 0 top $bg_color;
   border-bottom: 2px solid $border_color_nav;
+  margin-bottom: 50px;
+
   nav {
     background-color: transparent;
     border: 0;
@@ -45,4 +48,60 @@ html, body {
   }
 }
 
-// Registration
+// login / Registration
+.modal-box {
+  margin-top: 100px;
+
+  .uk-panel-box {
+    max-width: 350px;
+    border: 1px solid #f1f1f1;
+    background-color: #f3f7f6;
+
+    & > form {
+      width: 100%;
+
+      .terms, .links-group {
+        padding-top: 15px;
+        padding-bottom: 5px;
+      }
+
+      label {
+        font-size: 13px;
+        font-family: 'Open Sans','Helvetica Neue',Helvetica,sans-serif
+      }
+
+      button {
+        width: 100%;
+        min-height: 36px;
+        color: $button_text_color;
+        background-color: #00bf8c;
+        text-shadow: none;
+      }
+      button, .links-group > a {
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+// account
+.uk-panel {
+  & > .ml-photo {
+    width: 100%;
+    & > i, img {
+      border:6px solid $border_color_grid;
+      padding: 60px;
+      border-radius: 90px;
+      position: relative;
+      z-index: 2;
+      background-color: $button_text_color;
+    }
+  }
+  & > .uk-panel-box {
+    position: relative;
+    top: -70px;
+    z-index: 1;
+    padding-top: 80px;
+    text-align: center;
+  }
+}

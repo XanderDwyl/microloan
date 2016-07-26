@@ -5,11 +5,15 @@ class AccountController < ApplicationController
 
   def index
     @user = session
+
+    @user[:title] = 'Account Settings'
+    render layout: 'application'
   end
 
   def new
     notice_msg = "Can't create user when login"
-    redirect_to account_index_path, :notice => notice_msg if isLogin
+    redirect_to account_index_path, :notice => notice_msg and return if isLogin
+    render layout: 'account'
   end
 
   def create

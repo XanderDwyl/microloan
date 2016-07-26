@@ -14,16 +14,20 @@
 
   %body
     = render 'partials/notification'
-    = render 'partials/fix_nav_bar'
+    = render 'partials/application_nav_bar'
     .uk-container.uk-container-center
-      %h1.uk-article-title Sample
+      %h1.uk-article-title= @user[:title].to_s
       .uk-grid{"data-uk-grid-margin" => ""}
         .uk-width-medium-1-4.uk-hidden-small
-          %ul
+          %ul.uk-list.uk-list-line
             %li
-              Sample 1
+              %a{:href => "account/details"} Account Details
             %li
-              Sample 2
+              %a{:href => "account/referrals"} Referrals
+            %li
+              %a{:href => "account/loans"} Loans
+            %li
+              %a{:href => "account/privacy"} Privacy
         .uk-width-medium-3-4
           = yield
 

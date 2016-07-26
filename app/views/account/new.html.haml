@@ -1,19 +1,26 @@
-.uk-grid.uk-grid-match{"data-uk-grid-match" => "{target:'.uk-panel'}"}
-  .uk-width-1-1
-    .uk-panel.uk-panel-box
-      %form#registration-form.uk-form.uk-form-horizontal.uk-container-center.uk-width-medium-1-2.uk-nbfc{method: "POST", action: "/account"}
-        %input{:name => "authenticity_token", :type => "hidden", :value => "#{form_authenticity_token}"}
-        .uk-form-row
-          %label.uk-form-label{:for => "username"} Username
-          .uk-form-controls
-            %input#username.uk-width-1-1{placeholder: "username", type: "text", name: "username" }
-        .uk-form-row
-          %label.uk-form-label{:for => "form-s-ip"} Password
-          .uk-form-controls.with-icon
-            .uk-form-password.uk-width-1-1
-              %input.uk-width-1-1{type: "password", name: "password"}
-                %a.uk-form-password-toggle{"data-uk-form-password" => "{lblShow: '<i class=uk-icon-eye></i>', lblHide: '<i class=uk-icon-eye-slash></i>'}", :href => ""}
-                  %i.uk-icon-eye
-        .uk-form-row
-          .uk-form-controls.uk-clearfix
-            %button.uk-float-right.uk-button.uk-button-primary{:type => "submit"} Register
+.modal-box{"data-uk-grid-match" => "{target:'.uk-panel'}"}
+  %h3.uk-text-bold.uk-text-center Register to MicroLoan
+  .uk-panel.uk-panel-box.uk-container-center
+    %form#registration-form.uk-form.uk-form-stacked.uk-container-center.uk-width-medium-1-2.uk-nbfc{method: "POST", action: "/account"}
+      %input{:name => "authenticity_token", :type => "hidden", :value => "#{form_authenticity_token}"}
+      .uk-form-row
+        %label.uk-form-label{:for => "username"} Username
+        .uk-form-controls
+          %input#username.uk-width-1-1{placeholder: "username", type: "text", name: "username" }
+      .uk-form-row
+        %label.uk-form-label{:for => "form-s-ip"} Password
+        .uk-form-controls.with-icon
+          .uk-form-password.uk-width-1-1
+            %input.uk-width-1-1{type: "password", name: "password"}
+              %a.uk-form-password-toggle{"data-uk-form-password" => "{lblShow: '<i class=uk-icon-eye></i>', lblHide: '<i class=uk-icon-eye-slash></i>'}", :href => ""}
+                %i.uk-icon-eye
+      .terms.uk-text-center
+        By signing up you accept our
+        %a{:href => "/terms"} Terms of Use
+
+      .uk-form-row
+        .uk-form-controls.uk-clearfix
+          %button.uk-button{:type => "submit"} Get Started
+
+      .links-group.uk-text-center
+        %a{:href => "/login"} Already have an account?

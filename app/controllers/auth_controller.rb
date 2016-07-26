@@ -2,7 +2,8 @@ class AuthController < ApplicationController
   include AuthHelper
 
   def login
-    redirect_to root_path unless session[:user_id].nil?
+    redirect_to root_path and return unless session[:user_id].nil?
+    render layout: 'account'
   end
 
   def create
